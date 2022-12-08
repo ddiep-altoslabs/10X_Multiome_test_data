@@ -55,6 +55,7 @@ cellranger-arc mkref --config=../cellranger_arc_mkref_test_mm39_chr19_config.csv
 5. Test successful when program completes without error and a GRCm39 folder is created.
 
 ## cellranger-arc count
+1. Test fastq data were downloaded from SRA database (file ids: SRR18907480 and SRR18907481). Starting 2 M reads from SRR18907480 and 10 M reads from SRR18907481 were initially mapped to mm39 chr19 and only aligned reads were filtered and converted back to fastq files. 
 1. Return to the 10X_Multiome_test_data directory (up one level).
 ```
 cd ..
