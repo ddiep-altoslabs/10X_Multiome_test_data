@@ -1,0 +1,3 @@
+fastqs,sample,library_type
+/share/ddiep/public/dou2022/subsample_fastqs,SRR18907480_chr19_sub,Gene Expression
+/share/ddiep/public/dou2022/subsample_fastqs,SRR18907481_chr19_sub,Chromatin Accessibility
