@@ -56,12 +56,19 @@ cellranger-arc mkref --config=../cellranger_arc_mkref_test_mm39_chr19_config.csv
 
 ## cellranger-arc count
 1. Test fastq data were downloaded from SRA database (file ids: SRR18907480 and SRR18907481). Starting 2 M reads from SRR18907480 and 10 M reads from SRR18907481 were initially mapped to mm39 chr19 and only aligned reads were filtered and converted back to fastq files. 
-1. Return to the 10X_Multiome_test_data directory (up one level).
+2. Return to the 10X_Multiome_test_data directory (up one level).
 ```
 cd ..
 ```
-2. Run the command:
+2. Generate the libraries.csv input file 
 ```
-cellranger-arc count --id test_count --reference ./mus_musculus/GRCm39 --libraries cellranger_arc_count_input_libraries.csv
+echo fastqs,sample,library_type > libraries.csv
+echo `pwd`10x_fastqs,SRR18907480_chr19_sub,Gene Expression >> libraries.csv
+echo `pwd`10x_fastqs,SRR18907481_chr19_sub,Chromatin Accessibility >> libraries.csv
+```
+
+4. Run the command:
+```
+cellranger-arc count --id test_count --reference ./mus_musculus/GRCm39 --libraries libraries.csv
 ```
 3. Verify that the output test_count/outs/summary.csv is same as the cellranger_arc_count_output_summary.csv file.
